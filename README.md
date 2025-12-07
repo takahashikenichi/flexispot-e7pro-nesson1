@@ -7,6 +7,7 @@
 > Follow this guide at your own risk.
 
 ---
+[日本語のREADMEはこちら](README_ja.md)
 
 ## Overview
 
