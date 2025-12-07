@@ -8,9 +8,9 @@ const char* password = "YOUR_PASSWORD";   // Your Wi-Fi password
 
 WebServer server(80);
 
-// D1 (GPIO7) will be TX1 -> No.6(TX) of e2pro 
-// D2 (GPIO2) will be RX1 -> No.5(RX) of e2pro
-// D3 (GPI06) will be No.4(DisplayPin20) of e2pro
+// D1 (GPIO7) will be TX1 -> No.6(TX) of E7 pro 
+// D2 (GPIO2) will be RX1 -> No.5(RX) of E7 pro
+// D3 (GPI06) will be No.4(DisplayPin20) of E7 pro
 // see https://github.com/iMicknl/LoctekMotion_IoT/tree/main
 
 char lastResult[6] = "";   // Stores the last displayed value (e.g. "1.95")
@@ -380,7 +380,7 @@ void setup() {
   Serial.begin(115200);
   Serial.println("Serial Ready.");
 
-  // Serial for e2pro
+  // Serial for E7 pro
   // Initialize Serial1 on D1 and D2
   // Format: Serial1.begin(baudrate, config, rxPin, txPin);
   Serial1.begin(9600, SERIAL_8N1, D2, D1);
