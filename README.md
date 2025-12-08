@@ -52,6 +52,7 @@ Accessible via `http://<device-ip>/`
 
 ### Supported Desk
 - **Flexispot E7 Pro**
+  - Controller Model: HS13M-1C0
 
 ### Controller Device
 - **Arduino Nesso N1** (tested & verified)
@@ -98,7 +99,7 @@ The assigned IP address is shown on:
 - the Serial Monitor  
 - the device's display  
 
-Access the controller from a browser: http://<device-ip>/
+Access the controller from a browser: http://\<device-ip\>/
 
 
 ### Web UI Functions
@@ -125,6 +126,7 @@ Access the controller from a browser: http://<device-ip>/
 
 1. Prepare and modify a standard RJ45 (Ethernet) cable.  
 2. Connect the cable to the Flexispot controller box. (Some Flexispot models have **two RJ45 ports**, allowing coexistence with the original remote.)
+![IMG_1240](https://github.com/user-attachments/assets/9abdf41e-e906-438c-ade4-600a29a73171)
 3. Open `flexispot_e7pro_nesson1.ino` in Arduino IDE.
 4. Update Wi-Fi credentials:
 ```cpp

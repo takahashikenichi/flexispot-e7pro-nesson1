@@ -39,7 +39,8 @@ Flexispot 製のスタンディングデスクのほとんどのモデルは、L
 
 ## ハードウェア構成
 
-- Flexispot E7 Pro 昇降デスク  
+- Flexispot E7 Pro 昇降デスク
+  - コントローラー型番: HS13M-1C0
 - M5Unified 対応デバイス  
   - **Arduino Nesso N1（動作確認済み）**
 - Flexispot E7 Pro と Arudino Nesso N1の接続
@@ -85,6 +86,7 @@ Serial出力と M5デバイスのディスプレイ に M5Unified 対応のIPア
 
 1. RJ45(普通のEtherケーブル)を加工し、E5デバイスに接続します
 2. RJ45ケーブルをFlexispot デスクのコントローラに接続します （一部のFlexispot デスクのコントローラーにはRJ45の口が2つあり、既存のコントローラーと共存できます）
+![IMG_1240](https://github.com/user-attachments/assets/9abdf41e-e906-438c-ade4-600a29a73171)
 3. `flexispot_e7pro_nesson1.ino`を Arduino IDE などで編集できるようにします
 4. コード内の `YOUR_SSID` / `YOUR_PASSWORD` を それぞれご自分の環境の WiFi の情報に書き換えます
 5. Arduino IDE からビルドし、Arduino Nesso N1 に書き込む  
