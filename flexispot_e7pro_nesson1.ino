@@ -372,7 +372,14 @@ void setup() {
   M5.Display.setTextColor(TFT_WHITE, TFT_BLACK);  // White text on black background
   M5.Display.setTextSize(2);                      // 2x size
 
-  // Initial screen
+
+  M5.Lcd.wakeup();
+  M5.Display.fillScreen(TFT_BLACK);
+  M5.Display.drawString("Flexispot Controller", M5.Display.width() / 2, M5.Display.height() / 2);
+
+  // Debug serial
+
+  M5.Lcd.wakeup();
   M5.Display.fillScreen(TFT_BLACK);
   M5.Display.drawString("Flexispot Controller", M5.Display.width() / 2, M5.Display.height() / 2);
 
@@ -603,7 +610,9 @@ void handleFrame() {
       if(strcmp(result, "   ") == 0) {
         M5.Display.fillScreen(TFT_BLACK);
         Serial.println("Clear Display");
+        M5.Lcd.sleep();
       } else {
+        M5.Lcd.wakeup();
         M5.Display.drawString(
           lastResult,
           M5.Display.width() / 2,
