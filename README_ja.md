@@ -3,11 +3,11 @@
 ![IMG_1237](https://github.com/user-attachments/assets/2d6b620c-cdfd-4e2e-9b4c-b81906e4d92c)
 
 > [!WARNING]
-> 注意してください！電子機器の実験は危険を伴う場合があります。このガイドは自己責任でご利用ください。
+> 気をつけてください！電子機器の実験は危険を伴う場合があります！このガイドは自己責任でご利用ください。
 
 ## 概要
 
-このプロジェクトは、Flexispot 製のスタンディングデスクをのコントローラーをエミューレーションした M5Unified 対応デバイス（Arduino nesso N1 など）から **物理ボタン** と **Web ブラウザ**の両方で操作できるようにするものです。
+このプロジェクトは、Flexispot 製のスタンディングデスクをのコントローラーをエミュレーションした M5Unified 対応デバイス（Arduino nesso N1 など）から **物理ボタン** と **Web ブラウザ**の両方で操作できるようにするものです。
 
 Flexispot 製のスタンディングデスクのほとんどのモデルは、LoctekMotion 社のコントローラーを利用しています。このプロジェクトでは、コントロールボックスに接続するRJ45ポートからシリアル通信を行い、スタンディングデスクを M5Unified 対応デバイスから操作することができます。
 
@@ -23,14 +23,14 @@ Flexispot 製のスタンディングデスクのほとんどのモデルは、L
 
 ## 主な機能
 
-- Flexispot 昇降デスク（E7 Pro）のシリアル制御による上昇・下降操作
+- Flexispot 昇降デスク（E7 Pro）のシリアル制御による上昇・下降の操作
 
 - M5Unified 対応本体のボタン操作／表示
-  - Button A: Wakeup（デスクのコントローラを起動）
-  - Button B: Preset 4（着座位置など用途に応じて変更可能）
+  - Button A: Wakeup（Wake状態に移行して現在の高さを表示）
+  - Button B: Preset 4（変更可能）
   - ディスプレイに現在の高さを表示
 - Web ブラウザからの操作（HTTP）／表示
-  - Wakeup （コントローラー起動／現在の高さの取得
+  - Wakeup （コントローラー起動／現在の高さの取得）
   - Up / Down（押している間のみ連続昇降、約 108ms 間隔で送信）
   - Memory（cmd_mem）
   - Preset 1 / 2 / 3 / 4
@@ -72,8 +72,8 @@ Flexispot のシリアル設定は以下のようになります。
 
 ## Web UI について
 
-接続先環境のSSIDとパスワードを設定し、M5Unified 対応を起動させ Wi-Fi に接続されると、HTTP サーバがポート `80` で起動します。
-Serial出力と M5デバイスのディスプレイ に M5Unified 対応のIPアドレスが表示されます。
+接続先の環境のSSIDとパスワードをハードコーディングにて設定して M5Unified 対応を起動させ Wi-Fi に接続されると、HTTP サーバがポート `80` で起動します。
+その際、Serial出力と M5デバイスのディスプレイ に M5Unified 対応のIPアドレスが表示されます。
 このIPアドレスを利用して、ブラウザから `http://<デバイスのIP>/` にアクセスすると操作が可能になります。
 
 - Wakeup ボタンを押すことで、Wake状態に移行して現在の高さが表示され操作が可能になります。
@@ -84,17 +84,17 @@ Serial出力と M5デバイスのディスプレイ に M5Unified 対応のIPア
 
 ## セットアップ
 
-1. RJ45(普通のEtherケーブル)を加工し、E5デバイスに接続します
-2. RJ45ケーブルをFlexispot デスクのコントローラに接続します （一部のFlexispot デスクのコントローラーにはRJ45の口が2つあり、既存のコントローラーと共存できます）
+1. RJ45(所謂普通のEtherケーブル)を加工し、E5デバイスに接続します
+2. RJ45ケーブルをFlexispot デスクのコントローラに接続します （E7Pro を含む一部のFlexispot デスクのコントローラーにはRJ45の口が2つあり、既存のコントローラーと共存できます）
 ![IMG_1240](https://github.com/user-attachments/assets/9abdf41e-e906-438c-ade4-600a29a73171)
 3. `flexispot_e7pro_nesson1.ino`を Arduino IDE などで編集できるようにします
 4. コード内の `YOUR_SSID` / `YOUR_PASSWORD` を それぞれご自分の環境の WiFi の情報に書き換えます
-5. Arduino IDE からビルドし、Arduino Nesso N1 に書き込む  
-6. シリアルモニタもしくはデバイスの画面よりIPアドレス確認
+5. Arduino IDE からビルドし、Arduino Nesso N1 に書き込みます
+6. シリアルモニタもしくはデバイスの画面よりIPアドレス確認します
    - シリアルモニターの場合は、`WiFi connected.`  `IP address: 192.168.x.y`というメッセージが表示されます
    - 画面表示
    ![IMG_1238](https://github.com/user-attachments/assets/34019079-53df-4635-a90c-db0bb567817c)
-7. ブラウザで `http://192.168.x.y/` にアクセスすると、Web UIが表示されます。
+7. ブラウザで `http://192.168.x.y/` にアクセスすると、Web UIが表示されます
 <img width="631" height="434" alt="image" src="https://github.com/user-attachments/assets/09dcf8de-a8dd-4a82-9209-76c9e7a2f77c" />
 
 ## 注意事項
